@@ -6,3 +6,4 @@
      ![image](https://github.com/user-attachments/assets/9f7d6713-731d-4a25-ad00-fbd8a11d6243)
    - Cloud9の代替として「Amazon SageMaker Studio コードエディタ」を利用する （ https://qiita.com/minorun365/items/f5289163795d5d7b21e2 ）
    - 「Code Editorは統合スタジオ環境の一部」として扱われており、独立したサービスではなくなっている（ https://blog.usize-tech.com/amazon-sagemaker-unified-studio/ ）
+   - 「Boto3」をインストール（ https://docs.aws.amazon.com/ja_jp/cloud9/latest/user-guide/sample-python.html ）
