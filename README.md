@@ -1,7 +1,8 @@
 # learning-bedrock-book
 ## Bedrock を試す（2025年4月22日実施）
-#### 1. Bedrock で「Claude 3.7 Sonnet」を有効化
-#### 2. AWS SDK を用いて「Claude 3.7 Sonnet」のAPIへリクエストを行う
+#### 1. Bedrock で「Claude 3.5 Sonnet」を有効化
+   - AWS Bedrockでは、CreateInferenceProfileで使用するベースモデルはOn Demand推論をサポートしている必要があり、Claude 3.7 Sonnetは使用できない。
+#### 2. AWS SDK を用いて「Claude 3.5 Sonnet」のAPIへリクエストを行う
    - 新規作成したAWSアカウントや、これまでCloud9を利用していなかったAWSアカウントで、Cloud9コンソールにアクセスできなくなった
      ![image](https://github.com/user-attachments/assets/9f7d6713-731d-4a25-ad00-fbd8a11d6243)
    - Cloud9の代替として「Amazon SageMaker Studio コードエディタ」を利用する （ https://qiita.com/minorun365/items/f5289163795d5d7b21e2 ）
@@ -59,6 +60,6 @@
 
    - 2_invoke-model.py で最新モデルを定義
       ```python
-      # モデルを定義（Claude 3.7 Sonnet）
-      modelId = "anthropic.claude-3-7-sonnet-20250219-v1:0"
+      # モデルを定義（Claude 3.5 Sonnet）
+      modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0"
       ```
