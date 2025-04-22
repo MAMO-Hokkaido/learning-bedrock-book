@@ -47,10 +47,18 @@
                   ```bash
                   # condaキャッシュ全削除
                   conda clean --all -y
-                  
+                  ```
+
+      
                   # pipキャッシュ削除
                   pip cache purge
                   
                   # 不要パッケージ手動削除
                   rm /home/user/.conda/pkgs/問題のパッケージ名
                   ```
+
+   - 2_invoke-model.py で最新モデルを定義
+      ```python
+      # モデルを定義（Claude 3.7 Sonnet）
+      modelId = "anthropic.claude-3-7-sonnet-20250219-v1:0"
+      ```
