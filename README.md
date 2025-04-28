@@ -63,3 +63,10 @@
       # モデルを定義（Claude 3.5 Sonnet）
       modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0"
       ```
+
+## LangChain と Streamlit を使った生成AIアプリ開発（2025年4月28日実施）
+#### 1. 開発環境の準備
+   - ライブラリのインストール
+      ```bash
+      pip install boto3==1.34.87 langchain==0.2.0 langchain-aws==0.1.4 langchain-community==0.2.0 streamlit==1.33.0 python-dateutil==2.8.2
+      ```
