@@ -1,5 +1,8 @@
 # learning-bedrock-book
-## Bedrock を試す（2025年4月22日実施）
+## 書籍について
+#### サンプルコード
+   - サンプルコードは[GitHub](https://github.com/minorun365/bedrock-book/tree/main)で公開されている。
+## 2.11 Bedrock を試す（2025年4月22日実施）
 #### 1. Bedrock で「Claude 3.5 Sonnet」を有効化
    - AWS Bedrockでは、CreateInferenceProfileで使用するベースモデルはOn Demand推論をサポートしている必要があり、Claude 3.7 Sonnetは使用できない。
 #### 2. AWS SDK を用いて「Claude 3.5 Sonnet」のAPIへリクエストを行う
@@ -63,9 +66,13 @@
       modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0"
       ```
 
-## LangChain と Streamlit を使った生成AIアプリ開発（2025年4月28日実施）
+## 3.5 LangChain と Streamlit を使った生成AIアプリ開発（2025年4月28日実施）
 #### 1. 開発環境の準備
    - ライブラリのインストール
       ```bash
       pip install boto3==1.34.87 langchain==0.2.0 langchain-aws==0.1.4 langchain-community==0.2.0 streamlit==1.33.0 python-dateutil==2.8.2
       ```
+#### 2. 【ステップ1】LangChain の実装
+   - LangChainを利用すると、GPT-4やGeminiなどの複数の生成AIモデルを同じインターフェースで利用できる。
+#### 3. 【ステップ2】ストリーム出力
+   - 
