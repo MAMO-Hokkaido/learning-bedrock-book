@@ -87,5 +87,7 @@
    - LangChainでは、ストリーム出力を設定できる。
 #### 4. 【ステップ3】Streamlit との統合
    - **Amazon SageMaker Studio コードエディタ**を利用する方法は[Streamlitアプリの起動＆プレビュー方法](https://qiita.com/minorun365/items/f5289163795d5d7b21e2)を参照。
-   - [チャットアプリケーション](https://rnost-54-167-126-47.a.free.pinggy.link)が完成。
+   - チャットアプリケーションが完成。ただ1つ以上前の会話を踏まえた回答は得られない。
+     ![image](https://github.com/user-attachments/assets/2447fd23-8c3c-4b0e-968e-c64151fc2fdd)
+
 #### 5. 
