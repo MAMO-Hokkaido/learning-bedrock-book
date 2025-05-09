@@ -1,17 +1,24 @@
 # learning-bedrock-book
 ## 書籍について
+#### 書籍の情報
+   - [Amazon Bedrock 生成AIアプリ開発入門](https://www.sbcr.jp/product/4815626440/)
 #### サンプルコード
    - サンプルコードは[GitHub](https://github.com/minorun365/bedrock-book/tree/main)で公開されている。
 ## 2.11 Bedrock を試す（2025年4月22日実施）
 #### 1. Bedrock で「Claude 3.5 Sonnet」を有効化
    - AWS Bedrockでは、CreateInferenceProfileで使用するベースモデルはOn Demand推論をサポートしている必要があり、Claude 3.7 Sonnetは使用できない。
 #### 2. AWS SDK を用いて「Claude 3.5 Sonnet」のAPIへリクエストを行う
-   - 新規作成したAWSアカウントや、これまでCloud9を利用していなかったAWSアカウントで、Cloud9コンソールにアクセスできなくなった
+   - 新規作成したAWSアカウントや、これまでCloud9を利用していなかったAWSアカウントで、Cloud9コンソールにアクセスできなくなった。
      ![image](https://github.com/user-attachments/assets/9f7d6713-731d-4a25-ad00-fbd8a11d6243)
-   - Cloud9の代替として「Amazon SageMaker Studio コードエディタ」を利用する （ https://qiita.com/minorun365/items/f5289163795d5d7b21e2 ）
-       - 2024 年 12 月 3 日、Amazon SageMaker の名前が Amazon SageMaker AI に変更された（ https://docs.aws.amazon.com/ja_jp/sagemaker/latest/dg/whatis.html ）
+   - Cloud9の代替として**Amazon SageMaker Studio コードエディタ**を利用する。 [Amazon SageMaker Studio コードエディタ利用手順]( https://qiita.com/minorun365/items/f5289163795d5d7b21e2)
+       - 2024 年 12 月 3 日、Amazon SageMaker の名前が Amazon SageMaker AI に変更された。[Amazonからの情報](https://docs.aws.amazon.com/ja_jp/sagemaker/latest/dg/whatis.html)
      ![image](https://github.com/user-attachments/assets/c530958d-e9f1-4efc-9df1-c2366bb74904)
        - 「Code Editorは統合スタジオ環境の一部」として扱われており、独立したサービスではなくなっている（ https://blog.usize-tech.com/amazon-sagemaker-unified-studio/ ）
+       - ```
+         恒常的に無料利用枠となるインスタンスが存在しないため、ハンズオンの終了後はインスタンスを忘れず停止もしくは削除しましょう。SageMakerの「ドメイン」自体に対する課金は発生しません。
+         ```
+         とあるが、インスタンスを停止しても課金が続いている（ごく少額であるが）
+         
    - 「Boto3」をインストール（ https://docs.aws.amazon.com/ja_jp/cloud9/latest/user-guide/sample-python.html ）
       - 依存関係のエラーが出た場合
          - エラーメッセージに従ってバージョンを合わせる
@@ -73,6 +80,12 @@
       pip install boto3==1.34.87 langchain==0.2.0 langchain-aws==0.1.4 langchain-community==0.2.0 streamlit==1.33.0 python-dateutil==2.8.2
       ```
 #### 2. 【ステップ1】LangChain の実装
+   - LangChainは生成AIアプリの開発フレームワークとしてデファクトスタンダードの地位を確立している。
    - LangChainを利用すると、GPT-4やGeminiなどの複数の生成AIモデルを同じインターフェースで利用できる。
 #### 3. 【ステップ2】ストリーム出力
-   - 
+   - 生成AIが生成した文字列を細かい単位で出力することを**ストリーム出力**という。
+   - LangChainでは、ストリーム出力を設定できる。
+#### 4. 【ステップ3】Streamlit との統合
+   - **Amazon SageMaker Studio コードエディタ**を利用する方法は[Streamlitアプリの起動＆プレビュー方法](https://qiita.com/minorun365/items/f5289163795d5d7b21e2)を参照。
+   - [チャットアプリケーション](https://rnost-54-167-126-47.a.free.pinggy.link)が完成。
+#### 5. 
