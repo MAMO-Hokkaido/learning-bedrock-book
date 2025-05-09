@@ -18,7 +18,9 @@
          恒常的に無料利用枠となるインスタンスが存在しないため、ハンズオンの終了後はインスタンスを忘れず停止もしくは削除しましょう。SageMakerの「ドメイン」自体に対する課金は発生しません。
          ```
          とあるが、インスタンスを停止しても課金が続いている（ごく少額であるが）
-         
+         ![image](https://github.com/user-attachments/assets/b500af53-2406-4745-8bc6-59cc7be1a0c5)
+         ![image](https://github.com/user-attachments/assets/077c5693-2fd3-46ac-a7ec-14720baac482)
+
    - 「Boto3」をインストール（ https://docs.aws.amazon.com/ja_jp/cloud9/latest/user-guide/sample-python.html ）
       - 依存関係のエラーが出た場合
          - エラーメッセージに従ってバージョンを合わせる
