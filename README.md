@@ -81,6 +81,10 @@
       ```bash
       pip install boto3==1.34.87 langchain==0.2.0 langchain-aws==0.1.4 langchain-community==0.2.0 streamlit==1.33.0 python-dateutil==2.8.2
       ```
+   - コードエディタを起動するたびに、Streamlit をインストールする必要がある。
+     ```bash
+     pip install streamlit
+     ```
 #### 2. 【ステップ1】LangChain の実装
    - LangChainは生成AIアプリの開発フレームワークとしてデファクトスタンダードの地位を確立している。
    - LangChainを利用すると、GPT-4やGeminiなどの複数の生成AIモデルを同じインターフェースで利用できる。
@@ -91,5 +95,7 @@
    - **Amazon SageMaker Studio コードエディタ**を利用する方法は[Streamlitアプリの起動＆プレビュー方法](https://qiita.com/minorun365/items/f5289163795d5d7b21e2)を参照。
    - チャットアプリケーションが完成。ただ1つ以上前の会話を踏まえた回答は得られない。
      ![image](https://github.com/user-attachments/assets/2447fd23-8c3c-4b0e-968e-c64151fc2fdd)
-
-#### 5. 
+#### 5. 【ステップ4】チャット形式の継続したやりとり
+   - Streamlit の `session_state` で各ユーザーセッションの再実行間で変数を共有する
+        - 参考：[Session State - Streamlit Docs](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)
+####6. 【】
