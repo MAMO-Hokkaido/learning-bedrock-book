@@ -72,10 +72,9 @@
    - 2_invoke-model.py で最新モデルを定義
       ```python
       # モデルを定義（Claude 3.5 Sonnet）
-      model = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+      modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0"
       ```
       - 以降作成するファイルでも同様にテンプレートのモデル定義を変更する必要がある。
-      - LangChain AWS（langchain_aws）では、ChatBedrockの初期化パラメータが変更されており、`modelId`ではなく`model`を使用する必要がある
 
 ## 3.5 LangChain と Streamlit を使った生成AIアプリ開発（2025年4月28日実施）
 #### 1. 開発環境の準備
@@ -90,6 +89,12 @@
 #### 2. 【ステップ1】LangChain の実装
    - LangChainは生成AIアプリの開発フレームワークとしてデファクトスタンダードの地位を確立している。
    - LangChainを利用すると、GPT-4やGeminiなどの複数の生成AIモデルを同じインターフェースで利用できる。
+   -  テンプレートのモデル定義を変更する必要がある。
+      ```python
+      # モデルを定義（Claude 3.5 Sonnet）
+      model_id = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+      ```
+      - 以降作成するファイルでも同様にテンプレートのモデル定義を変更する必要がある。
 #### 3. 【ステップ2】ストリーム出力
    - 生成AIが生成した文字列を細かい単位で出力することを**ストリーム出力**という。
    - LangChainでは、ストリーム出力を設定できる。
