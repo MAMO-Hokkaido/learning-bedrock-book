@@ -72,8 +72,10 @@
    - 2_invoke-model.py で最新モデルを定義
       ```python
       # モデルを定義（Claude 3.5 Sonnet）
-      modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+      model = "anthropic.claude-3-5-sonnet-20240620-v1:0"
       ```
+      - 以降作成するファイルでも同様にテンプレートのモデル定義を変更する必要がある。
+      - LangChain AWS（langchain_aws）では、ChatBedrockの初期化パラメータが変更されており、`modelId`ではなく`model`を使用する必要がある
 
 ## 3.5 LangChain と Streamlit を使った生成AIアプリ開発（2025年4月28日実施）
 #### 1. 開発環境の準備
@@ -92,11 +94,22 @@
    - 生成AIが生成した文字列を細かい単位で出力することを**ストリーム出力**という。
    - LangChainでは、ストリーム出力を設定できる。
 #### 4. 【ステップ3】Streamlit との統合
-   - **Amazon SageMaker Studio コードエディタ**を利用する方法は[Streamlitアプリの起動＆プレビュー方法](https://qiita.com/minorun365/items/f5289163795d5d7b21e2)を参照。
+   - **Amazon SageMaker Studio コードエディタ**を利用してStreamlitアプリを起動する方法は[Streamlitアプリの起動＆プレビュー方法](https://qiita.com/minorun365/items/f5289163795d5d7b21e2)を参照。
+   -ターミナルで以下のStreamlitの実行コマンドを実行。
+     ```bash
+     streamlit run <ファイル名>
+     ```
+     - アプリの実行を停止する際は、`Crtl + C`を押す。
+   - 新たにターミナルを起動し、以下のPinggyの実行コマンドを実行。
+     ```bash
+     ssh -p 443 -R0:localhost:8501 a.pinggy.io
+     ```
+     - アプリの実行を停止する際は、`Crtl + C`を押す。
+   - 表示されるURLのうち下側（https:// で始まる方）をコピーして、ブラウザの新しいタブで開き、「Enter site」をクリック
    - チャットアプリケーションが完成。ただ1つ以上前の会話を踏まえた回答は得られない。
      ![image](https://github.com/user-attachments/assets/2447fd23-8c3c-4b0e-968e-c64151fc2fdd)
 #### 5. 【ステップ4】チャット形式の継続したやりとり
-   - Streamlit の `session_state` で各ユーザーセッションの再実行間で変数を共有する
+   - Streamlit の `session_state` で各ユーザーセッションの再実行間で変数を共有する。
         - 参考：[Session State - Streamlit Docs](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)
 #### 6. 【ステップ5】チャット履歴の永続化
    - Amazon DynamoDBにチャット履歴を保存する。
