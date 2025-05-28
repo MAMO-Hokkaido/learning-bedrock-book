@@ -98,4 +98,5 @@
 #### 5. 【ステップ4】チャット形式の継続したやりとり
    - Streamlit の `session_state` で各ユーザーセッションの再実行間で変数を共有する
         - 参考：[Session State - Streamlit Docs](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)
-####6. 【】
+#### 6. 【ステップ5】チャット履歴の永続化
+   - Amazon DynamoDBにチャット履歴を保存する。
