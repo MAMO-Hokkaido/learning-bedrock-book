@@ -136,6 +136,10 @@
      ```bash
      zip -r9 langchain-layer.zip python
      ```
+     - zip コマンドを実行できないときは、以下のコマンドを実行して zip コマンドをインストールする。
+       ```bash
+       sudo apt-get install zip
+       ```
    - Lambda レイヤーを登録。
      ```bash
      aws lambda publish-layer-version \
