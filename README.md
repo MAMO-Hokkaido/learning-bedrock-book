@@ -118,3 +118,29 @@
         - 参考：[Session State - Streamlit Docs](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)
 #### 6. 【ステップ5】チャット履歴の永続化
    - Amazon DynamoDBにチャット履歴を保存する。
+## 3.6 AWS Lambda 上で動作する生成AIアプリ開発（2025年5月30日実施）
+#### 1. Lambda レイヤーを作成する
+   - ターミナルで以下のコマンドを実行し、ディレクトリを作成。
+     ```bash
+     mkdir python
+     ```
+   - ターミナルで以下のコマンドを実行し、必要な Python ライブラリを取得。
+     ```
+     pip install -t python langchain==0.2.0 langchain-aws==0.1.4 langchain-community==0.2.0 python-dateutil==2.8.2
+     ```
+   - langchain-aws の依存ライブラリとして boto3 がインストールされるが、 Lambda の環境にインストール済のため、 Lambda レイヤーから削除する。
+     ```bash
+     rm -r python/boto*
+     ```
+   - zip 形式で圧縮。
+     ```bash
+     zip -r9 langchain-layer.zip python
+     ```
+   - Lambda レイヤーを登録。
+     ```bash
+     aws lambda publish-layer-version \
+      --layer-name langchain-layer \
+      --compatible-runtimes python3.9 \
+      --compatible-architectures x86_64 \
+      --zip-file fileb://langchain-layer.zip --no-cli-pager
+     ```
