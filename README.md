@@ -140,11 +140,14 @@
        ```bash
        sudo apt-get install zip
        ```
-   - Lambda レイヤーを登録。
+   - Lambda レイヤーを登録。ターミナルで`python --version`を実行し、その情報を基にランタイムのpythonのバージョンを指定する。（以下ではpython3.12を指定）
      ```bash
      aws lambda publish-layer-version \
       --layer-name langchain-layer \
-      --compatible-runtimes python3.9 \
+      --compatible-runtimes python3.12 \
       --compatible-architectures x86_64 \
       --zip-file fileb://langchain-layer.zip --no-cli-pager
      ```
+#### 2. Lambda 関数を作成する
+   - マネジメントコンソールで作成する。ランタイムはLambda レイヤーに登録したものに合わせる。
+   - これで生成AIアプリのバックエンド部分を構築できた。
