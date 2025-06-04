@@ -151,3 +151,10 @@
 #### 2. Lambda 関数を作成する
    - マネジメントコンソールで作成する。ランタイムはLambda レイヤーに登録したものに合わせる。
    - これで生成AIアプリのバックエンド部分を構築できた。
+     
+## 4.2 Knowledge basesでRAGを実装してみよう（2025年6月4日実施）
+#### 1. S3バケットを作成する
+   - [bedrock-ug.pdf](https://docs.aws.amazon.com/pdfs/bedrock/latest/userguide/bedrock-ug.pdf)をPCのローカルに保存する。
+   - S3バケットに先ほど保存したPDFファイルをアップロードする。
+#### 2. ナレッジベースを作成する
+   - Bedrockコンソールで「ナレッジベース」を選択し、ナレッジベースを作成する。
