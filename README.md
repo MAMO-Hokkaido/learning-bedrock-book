@@ -160,3 +160,5 @@
    - Bedrockコンソールで「ナレッジベース」を選択し、ナレッジベースを作成する。
    - コストを掛けずにRAGを試用するために、**Kendra GenAI Index を含むナレッジベース**を作成する。
    - 参考：[【未経験者大歓迎】RAG超入門：AWSが推奨するRAGを体験するハンズオン #生成AI - Qiita](https://qiita.com/moritalous/items/61f91039c13aeb9a51eb)
+     ![image](https://github.com/user-attachments/assets/b81a1293-e9a3-4511-983d-68ab33782fc2)
+
